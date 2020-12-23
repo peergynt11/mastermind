@@ -1,6 +1,6 @@
 {
-  "name": "temp1",
-  "version": "0.0.0",
+  "name": "@peer.gynt/mastermind",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,13 +9,15 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~10.2.0",
+    "@angular/cdk": "^10.2.7",
     "@angular/common": "~10.2.0",
     "@angular/compiler": "~10.2.0",
     "@angular/core": "~10.2.0",
     "@angular/forms": "~10.2.0",
+    "@angular/material": "^10.2.7",
     "@angular/platform-browser": "~10.2.0",
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",

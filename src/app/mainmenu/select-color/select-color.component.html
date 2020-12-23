@@ -1,0 +1,14 @@
+<p>select-color works!</p>
+
+<mat-form-field appearance="fill">
+    <mat-label [class.fett]="true">Select an option</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option value="none">None</mat-option>
+      <mat-option class="red" value="option1_Red">Red</mat-option>
+      <mat-option [class.green]="true"value="option2_Green">Green</mat-option>
+      <mat-option [class.yellow]="true" value="option3_Yellow">Yellow</mat-option>
+      <mat-option [class.blue] = "true" value="option4_Blue">Blue</mat-option>
+    </mat-select>
+</mat-form-field>
+  
+<p>You selected: {{selected}}</p>
