@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SelectColorComponent implements OnInit {
   
   selected = 'none';
-
+  
   constructor() { }
 
   ngOnInit(): void {
