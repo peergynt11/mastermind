@@ -1,12 +1,22 @@
 .example-container {
-    width: 400px;
+    width: 100px;
     max-width: 100%;
     margin: 0 25px 25px 0;
     display: inline-block;
     vertical-align: top;
   }
   
-  .example-list {
+  .example-list-even {
+    width: 1000px;
+    border: solid 1px #ccc;
+    min-height: 60px;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .example-list-available {
     border: solid 1px #ccc;
     min-height: 60px;
     background: white;

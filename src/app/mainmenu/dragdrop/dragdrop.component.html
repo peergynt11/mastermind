@@ -5,7 +5,7 @@
       cdkDropList
       [cdkDropListData]="all"
       cdkDropListConnectedTo="even"
-      class="example-list"
+      class="example-list-available"
       (cdkDropListDropped)="drop($event)"
       [cdkDropListEnterPredicate]="noReturnPredicate">
       <div
@@ -18,16 +18,15 @@
     </div>
 </div>
 
-<!-- [ngStyle]="setBackground()"; -->
-
 <div class="example-container">
     <h2>Even numbers</h2>
     <div
       id="even"
       cdkDropList
+      cdkDropListOrientation="horizontal"
       [cdkDropListData]="even"
       cdkDropListConnectedTo="all"
-        class="example-list"
+      class="example-list-even"
       (cdkDropListDropped)="drop($event)"
       [cdkDropListEnterPredicate]="evenPredicate">
       <div
@@ -37,5 +36,9 @@
         cdkDrag
         [cdkDragData]="number">{{number}}</div>
     </div>
-</div>
-  
+    <div [style.visibility] = "getNumberOfElements() ? 'visible' : 'hidden'">
+      <p>All slots occupied</p>
+    </div>
+  </div>
+
+  <!-- {'color': 'yellow'} -->

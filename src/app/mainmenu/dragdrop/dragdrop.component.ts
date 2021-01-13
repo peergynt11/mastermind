@@ -11,6 +11,7 @@ import { stringify } from '@angular/compiler/src/util';
   styleUrls: ['./dragdrop.component.css'],
 })
 export class DragdropComponent {
+  maxEntries = 4;
   all = [1,2,3,4,5,6];
   even = [];
 
@@ -23,20 +24,24 @@ export class DragdropComponent {
                         event.previousIndex,
                         event.currentIndex);
     }
-    console.log(this.even)
   }
 
   /** Predicate function that only allows even numbers to be dropped into a list. */
   evenPredicate(item: CdkDrag<number>) {
-    return true;
-    // return item.data % 2 === 0;
-  }
+    //das geht nicht ?! Kein Zugriff auf this.even.length 
+    // return this.even.length <= this.maxEntries;
+    let laenge = item.dropContainer.data.length-1
+ 
+    // Von 6 Element max 4 auswählen
+    return laenge >= 2 
+   }
 
   /** Predicate function that doesn't allow items to be dropped into a list. */
   noReturnPredicate() {
     return true;
   }
- /** Set the right background-color */
+ 
+  /** Set the right background-color */
   setBackground(entry: number) {
     let farbe: string = '';
     switch (entry) {
@@ -67,4 +72,10 @@ export class DragdropComponent {
     };
     return styles;
   }
+
+  getNumberOfElements() {
+    console.log(this.even.length >= this.maxEntries);
+    return this.even.length >= this.maxEntries;
+  }
+
 }
