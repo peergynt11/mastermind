@@ -19,7 +19,7 @@
 </div>
 
 <div class="example-container">
-    <h2>Even numbers</h2>
+    <h2>My numbers</h2>
     <div
       id="even"
       cdkDropList
@@ -38,7 +38,27 @@
     </div>
     <div [style.visibility] = "getNumberOfElements() ? 'visible' : 'hidden'">
       <p>All slots occupied</p>
+      <p><button (click)="checkColors()">Check</button></p>
+    </div>
+    <!-- <p><button (click)="checkColors()">Check Colors</button></p> -->
+  </div>
+  
+  <div class="example-container">
+    <h2>Computer numbers</h2>
+    <div
+      id="computer"
+      cdkDropList
+      cdkDropListOrientation="horizontal"
+      [cdkDropListData]="computer"
+      class="example-list-even"
+      [cdkDropListEnterPredicate]="noReturnPredicate">
+      <div
+        class="example-box-white"
+        *ngFor="let number of computer"
+        class="example-box-white"
+        [ngStyle]="setBackground(number)"
+        [cdkDragData]="number"
+        cdkDrag>{{number}}</div>
     </div>
   </div>
-
-  <!-- {'color': 'yellow'} -->
+  

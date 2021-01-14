@@ -13,6 +13,7 @@ import { stringify } from '@angular/compiler/src/util';
 export class DragdropComponent {
   maxEntries = 4;
   all = [1,2,3,4,5,6];
+  computer = [1,2,3,4];
   even = [];
 
   drop(event: CdkDragDrop<number[]>) {
@@ -74,8 +75,24 @@ export class DragdropComponent {
   }
 
   getNumberOfElements() {
-    console.log(this.even.length >= this.maxEntries);
     return this.even.length >= this.maxEntries;
   }
 
+  checkColors() {
+    let a=this.even
+    let b=this.computer
+
+    a.forEach(a_element => {
+
+        if (b.includes(a_element)) {
+            let index_a = a.indexOf (a_element);
+            let index_b = b.indexOf (a_element);
+            if (index_a === index_b) {
+                console.log('Position!')
+            } else {
+                console.log('Farbe') 
+            }
+        }
+    });
+  }
 }
