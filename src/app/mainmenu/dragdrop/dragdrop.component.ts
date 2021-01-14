@@ -15,6 +15,7 @@ export class DragdropComponent {
   all = [1,2,3,4,5,6];
   computer = [1,2,3,4];
   even = [];
+  result = []
 
   drop(event: CdkDragDrop<number[]>) {
     if (event.previousContainer === event.container) {
@@ -81,16 +82,16 @@ export class DragdropComponent {
   checkColors() {
     let a=this.even
     let b=this.computer
+    this.result = []
 
     a.forEach(a_element => {
-
         if (b.includes(a_element)) {
             let index_a = a.indexOf (a_element);
             let index_b = b.indexOf (a_element);
             if (index_a === index_b) {
-                console.log('Position!')
+              this.result.push('Position!')
             } else {
-                console.log('Farbe') 
+              this.result.push('Farbe')
             }
         }
     });
